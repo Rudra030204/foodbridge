@@ -47,7 +47,33 @@ def create_app() -> FastAPI:
     def health():
         return {"status": "ok"}
 
+    _mount_frontend(app)
     return app
+
+
+def _mount_frontend(app: FastAPI) -> None:
+    """Single-service deployment: if a built frontend exists (backend/static, or STATIC_DIR), serve it from this app."""
+    import os
+    from pathlib import Path
+
+    from fastapi.responses import FileResponse, JSONResponse
+    from fastapi.staticfiles import StaticFiles
+
+    root = Path(os.environ.get("STATIC_DIR") or Path(__file__).resolve().parents[1] / "static")
+    index = root / "index.html"
+    if not index.is_file():
+        return
+    if (root / "assets").is_dir():
+        app.mount("/assets", StaticFiles(directory=root / "assets"), name="assets")
+
+    @app.get("/{path:path}", include_in_schema=False)
+    def spa(path: str):
+        if path.startswith(("api/", "ws")) or path in ("docs", "openapi.json", "redoc"):
+            return JSONResponse({"error": {"code": "not_found", "message": "Not found"}}, status_code=404)
+        f = (root / path).resolve()
+        if path and f.is_file() and root.resolve() in f.parents:
+            return FileResponse(f)
+        return FileResponse(index)  # client-side routes (/donor, /login, ...)
 
 
 app = create_app()
