@@ -1,0 +1,9 @@
+node_modules/
+.venv/
+__pycache__/
+*.db
+*.db-*
+dist/
+test-results/
+backend/static/
+.env

@@ -1,0 +1,4 @@
+strategy,listings,avg_distance_km,avg_capacity_fit,avg_time_score,avg_weighted_score
+weighted,25,3.2,0.959,0.811,0.826
+nearest,25,3.06,0.955,0.813,0.822
+random,25,5.67,0.94,0.766,0.738

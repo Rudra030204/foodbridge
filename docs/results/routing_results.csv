@@ -1,0 +1,7 @@
+pickups,tight_deadlines,trials,naive_km,nn_km,nn_2opt_km,saving_vs_naive_pct,deadline_miss_rate_naive,deadline_miss_rate_optimised
+2,False,200,32.57,29.35,28.15,13.5,0.0,0.0
+2,True,200,32.08,29.01,28.24,12.0,0.505,0.465
+3,False,200,48.33,38.95,36.98,23.5,0.0,0.0
+3,True,200,50.86,39.91,38.75,23.8,0.76,0.63
+4,False,200,68.02,48.96,46.95,31.0,0.0,0.0
+4,True,200,67.46,48.53,47.09,30.2,0.905,0.84

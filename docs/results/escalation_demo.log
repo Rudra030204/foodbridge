@@ -1,0 +1,15 @@
+# Escalation live demo (TIME_SCALE=60, real server, real scheduler)
+# listing: 80 meals cooked_meal/room, created at t=0; level 1 at ~10 s, level 2 at ~20 s, level 3 at ~30 s (1 real second = 1 simulated minute)
+2026-11-23 11:30:19,078 INFO foodbridge.scheduler: Scheduler started (every 0.5 real seconds, TIME_SCALE=60.0)
+2026-11-23 11:30:33,586 INFO foodbridge.escalation: Escalation cycle: {'expired': 0, 'pickups_failed': 0, 'escalations': 1, 'checked': 1, 'warnings': 0, 'reassigned': 0}
+2026-11-23 11:30:43,584 INFO foodbridge.notifier: [MOCK SMS] to=9820000004 text=New surplus food near you: 80 meals of Wedding dinner surplus (7.9 km away). Urgent: still unclaimed.
+2026-11-23 11:30:43,586 INFO foodbridge.notifier: [MOCK SMS] to=9820000003 text=New surplus food near you: 80 meals of Wedding dinner surplus (7.3 km away). Urgent: still unclaimed.
+2026-11-23 11:30:43,587 INFO foodbridge.notifier: [MOCK SMS] to=9820000007 text=New surplus food near you: 80 meals of Wedding dinner surplus (6.7 km away). Urgent: still unclaimed.
+2026-11-23 11:30:43,588 INFO foodbridge.notifier: [MOCK SMS] to=9820000005 text=New surplus food near you: 80 meals of Wedding dinner surplus (7.6 km away). Urgent: still unclaimed.
+2026-11-23 11:30:43,590 INFO foodbridge.notifier: [MOCK SMS] to=9820000009 text=New surplus food near you: 80 meals of Wedding dinner surplus (8.5 km away). Urgent: still unclaimed.
+2026-11-23 11:30:43,591 INFO foodbridge.notifier: [MOCK SMS] to=9820000001 text=New surplus food near you: 80 meals of Wedding dinner surplus (9.2 km away). Urgent: still unclaimed.
+2026-11-23 11:30:43,592 INFO foodbridge.notifier: [MOCK SMS] to=9820000008 text=New surplus food near you: 80 meals of Wedding dinner surplus (8.6 km away). Urgent: still unclaimed.
+2026-11-23 11:30:43,594 INFO foodbridge.escalation: Escalation cycle: {'expired': 0, 'pickups_failed': 0, 'escalations': 1, 'checked': 1, 'warnings': 0, 'reassigned': 0}
+2026-11-23 11:30:53,585 INFO foodbridge.notifier: [MOCK SMS] to=9820000011 text=New surplus food near you: 80 meals of Wedding dinner surplus (4.2 km away). Final diversion: compost / animal feed.
+2026-11-23 11:30:53,587 INFO foodbridge.notifier: [MOCK SMS] to=9820000012 text=New surplus food near you: 80 meals of Wedding dinner surplus (12.8 km away). Final diversion: compost / animal feed.
+2026-11-23 11:30:53,588 INFO foodbridge.escalation: Escalation cycle: {'expired': 0, 'pickups_failed': 0, 'escalations': 1, 'checked': 1, 'warnings': 0, 'reassigned': 0}

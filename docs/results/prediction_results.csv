@@ -1,0 +1,4 @@
+method,mae,rmse
+gradient_boosting,42.045,88.211
+naive_last_week,43.634,91.5
+moving_average_7d,67.777,118.782
